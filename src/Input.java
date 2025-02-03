@@ -1,25 +1,40 @@
-public class DataConversion {
+import java.util.Scanner;
 
+public class Input {
     public static void main(String[] args) {
-        // Conv. string into float;
-        String strFloat = "374.25";
-        float from_strFloat = Float.parseFloat(strFloat);
+        // Scanner object to get from user
+        Scanner scanner = new Scanner(System.in);
 
-        // Conv. string into integer;
-        String strInt = "1250";
-        int from_strInt = Integer.parseInt(strInt);
+        // Declare variables to store user input
+        String name;
+        int age;
+        double weight;
+        boolean isSmoker;
+        
+        // User's name
+        System.out.print("Enter your name: ");
+        name = scanner.nextLine();
 
-        // Conv. float into integer;
-        float floatNum = 56.715f;
-        int from_floatNum = (int) floatNum;
+        // User's age
+        System.out.print("Enter your age: ");
+        age = scanner.nextInt();
 
-        // Conv. integer into float;
-        int intNum = 1500;
-        float from_intNum = (float) intNum;
+        // User's weight
+        System.out.print("Enter your weight (in kg): ");
+        weight = scanner.nextDouble();
 
-        // Conv. the double into string;
-        double doubleNum = 3.13149265;
-        String from_doubleNum = Double.toString(doubleNum);
+        // User's lungs I guess
+        System.out.print("Are you a smoker? (True/False) ");
+        isSmoker = scanner.nextBoolean();
+
+        // Output
+        System.out.println("\n--- User Information ====");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Weight: " + weight + " kg");
+        System.out.println("Smoker: " + isSmoker);
+
+        // Scanner close to prevent leak
+        scanner.close();
     }
 }
-
